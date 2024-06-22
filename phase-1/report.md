@@ -16,7 +16,7 @@ There are 17 columns in menu relation. Altogether they illustrate
 There are 7 columns in menu_page relation. Altogether they illustrate
 - the menu book(MENU_ID) current page(page_number) belongs to 
 - size(FULL_HEIGHT & FULL_WEIGHT) of the physical page
-- the digital image(IMAGE_ID) of this page
+- the digital image(IMAGE_ID) of this page. For example, here is an [image](https://menus.nypl.org/menu_pages/41519)
 
 ### Menu Item
 There are 8 columns in menu_item relation. Altogether they illustrate
