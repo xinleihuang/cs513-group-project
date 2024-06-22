@@ -10,5 +10,7 @@ updated_at DATE,
 xpos NUMERIC,
 ypos NUMERIC,
 FOREIGN KEY (menu_page_id)
-  REFERENCES menu_page (id)
+  REFERENCES menu_page (id),
+FOREIGN KEY (dish_id)
+  REFERENCES dish (id)
 );
