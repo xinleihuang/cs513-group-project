@@ -1,0 +1,34 @@
+#@begin Linear_OR #@desc Linear OpenRefine Workflow
+#@param col-name:full_width
+#@param col-name:uuid
+#@param col-name:page_number
+#@param expression:value.toNumber()
+#@param expression:value.toLowercase()
+#@param col-name:full_height
+#@in table0
+#@out table4
+#@begin core/text-transform0#@desc Text transform on cells in column page_number using expression value.toNumber()
+#@param col-name:page_number
+#@param expression:value.toNumber()
+#@in table0
+#@out table1
+#@end core/text-transform0
+#@begin core/text-transform1#@desc Text transform on cells in column full_height using expression value.toNumber()
+#@param col-name:full_height
+#@param expression:value.toNumber()
+#@in table1
+#@out table2
+#@end core/text-transform1
+#@begin core/text-transform2#@desc Text transform on cells in column full_width using expression value.toNumber()
+#@param col-name:full_width
+#@param expression:value.toNumber()
+#@in table2
+#@out table3
+#@end core/text-transform2
+#@begin core/text-transform3#@desc Text transform on cells in column uuid using expression value.toLowercase()
+#@param col-name:uuid
+#@param expression:value.toLowercase()
+#@in table3
+#@out table4
+#@end core/text-transform3
+#@end Linear_OR
