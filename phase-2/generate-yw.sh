@@ -1,5 +1,6 @@
 #!/bin/bash
 
+python -m venv .venv
 source .venv/bin/activate
 
 mkdir -p yw/yw yw/gv yw/png
