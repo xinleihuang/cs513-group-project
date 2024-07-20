@@ -1,0 +1,36 @@
+select count (*) from menu where Lower(sponsor) like lower('%Norddeutscher%');
+693
+
+select count (*) from menu_cleaned where Lower(sponsor) like lower('%Norddeutscher%');
+693
+-- We can see that the same number of sponsors that contains Norddeutchscher 
+
+Select Count(*) from menu WHERE LOWER(sponsor) = LOWER('Norddeutscher Lloyd Bremen');
+601
+Select Count(*) from menu_cleaned WHERE LOWER(sponsor) = LOWER('Norddeutscher Lloyd Bremen');
+666
+
+-- But we successfully increased the number of Norddeutscher Lloyd Bremen through data cleaning
+
+select count (*) from menu where Lower(event) like lower('%[dinner]%');
+84
+select count (*) from menu_cleaned where Lower(event) like lower('%[dinner]%');
+6
+
+-- Though not perfect, we decreased the number of words surrounded by surrounding brackets.
+
+select count (distinct(name)) from dish;
+423363
+select count (distinct(name)) from dish_cleaned;
+337103
+select count (*) from dish_cleaned;
+423397
+select count (*) from dish;
+423397
+
+-- We can see we have merged names by seeing the unique counts from our tables, with the same number of total rows
+
+
+
+
+
