@@ -1,0 +1,52 @@
+#
+#@begin NYPL_Data_Cleaning #@desc NYPL menu data cleaning workflow
+
+## input files
+#@in menu @uri https://uofi.app.box.com/menu.csv
+#@in menu_page @uri https://uofi.app.box.com/menu_page.csv
+#@in menu_item @uri https://uofi.app.box.com/menu_item.csv
+#@in dish @uri https://uofi.app.box.com/dish.csv
+
+## output files
+#@out menu_cleaned
+#@out menu_page_cleaned
+#@out menu_item_cleaned
+#@out dish_cleaned
+
+## data profiling 
+#@begin data_profiling_via_excel
+#@in menu
+#@in menu_page
+#@in menu_item
+#@in dish
+#@out obvious_data_quality_issues_menu
+#@out obvious_data_quality_issues_menu_page
+#@out obvious_data_quality_issues_menu_item
+#@out obvious_data_quality_issues_dish
+#@end data_profiling_via_excel
+
+## data cleaning
+#@begin data_cleaning_via_openrefine
+#@in menu
+#@in menu_page
+#@in menu_item
+#@in dish
+#@out menu_cleaned_openrefine @uri file:menu_cleaned_openrefine.csv
+#@out menu_page_cleaned_openrefine @uri file:menu_page_cleaned_openrefine.csv
+#@out menu_item_cleaned_openrefine @uri file:menu_item_cleaned_openrefine.csv
+#@out dish_cleaned_openrefine @uri file:dish_cleaned_openrefine.csv
+#@end data_cleaning_via_openrefine
+
+## IC violations check
+#@begin ic_violations_check_via_sqlite
+#@in menu_cleaned_openrefine @uri file:menu_cleaned_openrefine.csv
+#@in menu_page_cleaned_openrefine @uri file:menu_page_cleaned_openrefine.csv
+#@in menu_item_cleaned_openrefine @uri file:menu_item_cleaned_openrefine.csv
+#@in dish_cleaned_openrefine @uri file:dish_cleaned_openrefine.csv
+#@out menu_cleaned
+#@out menu_page_cleaned
+#@out menu_item_cleaned
+#@out dish_cleaned
+#@end ic_violations_check_via_sqlite
+
+#@end NYPL_Data_Cleaning
