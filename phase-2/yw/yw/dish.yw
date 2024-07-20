@@ -1,0 +1,152 @@
+#@begin NYPL_Data_Cleaning.data_cleaning_via_openrefine.dish
+#@param col-name:name
+#@param col-name:times_appeared
+#@param col-name:highest_price
+#@param col-name:description
+#@param col-name:menus_appeared
+#@param col-name:lowest_price
+#@param expression:value.replace(/[\\p{Zs}\\s]+/,'_')
+#@param expression:value.toNumber()
+#@param col-name:last_appeared
+#@param expression:value.trim()
+#@param col-name:first_appeared
+#@param expression:value.toTitlecase()
+#@in dish @uri https://uofi.app.box.com/dish.csv
+#@out table25
+#@begin core/text-transform0#@desc Text transform on cells in column name using expression value.trim()
+#@param col-name:name
+#@param expression:value.trim()
+#@in dish @uri https://uofi.app.box.com/dish.csv
+#@out table1
+#@end core/text-transform0
+#@begin core/text-transform1#@desc Text transform on cells in column name using expression value.replace(/[\\p{Zs}\\s]+/,' ')
+#@param col-name:name
+#@param expression:value.replace(/[\\p{Zs}\\s]+/,'_')
+#@in table1
+#@out table2
+#@end core/text-transform1
+#@begin core/text-transform2#@desc Text transform on cells in column description using expression value.trim()
+#@param col-name:description
+#@param expression:value.trim()
+#@in table2
+#@out table3
+#@end core/text-transform2
+#@begin core/text-transform3#@desc Text transform on cells in column description using expression value.replace(/[\\p{Zs}\\s]+/,' ')
+#@param col-name:description
+#@param expression:value.replace(/[\\p{Zs}\\s]+/,'_')
+#@in table3
+#@out table4
+#@end core/text-transform3
+#@begin core/text-transform4#@desc Text transform on cells in column menus_appeared using expression value.toNumber()
+#@param col-name:menus_appeared
+#@param expression:value.toNumber()
+#@in table4
+#@out table5
+#@end core/text-transform4
+#@begin core/text-transform5#@desc Text transform on cells in column times_appeared using expression value.toNumber()
+#@param col-name:times_appeared
+#@param expression:value.toNumber()
+#@in table5
+#@out table6
+#@end core/text-transform5
+#@begin core/text-transform6#@desc Text transform on cells in column first_appeared using expression value.toNumber()
+#@param col-name:first_appeared
+#@param expression:value.toNumber()
+#@in table6
+#@out table7
+#@end core/text-transform6
+#@begin core/text-transform7#@desc Text transform on cells in column last_appeared using expression value.toNumber()
+#@param col-name:last_appeared
+#@param expression:value.toNumber()
+#@in table7
+#@out table8
+#@end core/text-transform7
+#@begin core/text-transform8#@desc Text transform on cells in column lowest_price using expression value.toNumber()
+#@param col-name:lowest_price
+#@param expression:value.toNumber()
+#@in table8
+#@out table9
+#@end core/text-transform8
+#@begin core/text-transform9#@desc Text transform on cells in column highest_price using expression value.toNumber()
+#@param col-name:highest_price
+#@param expression:value.toNumber()
+#@in table9
+#@out table10
+#@end core/text-transform9
+#@begin core/mass-edit0#@desc Mass edit cells in column name
+#@param col-name:name
+#@in table10
+#@out table11
+#@end core/mass-edit0
+#@begin core/mass-edit1#@desc Mass edit cells in column name
+#@param col-name:name
+#@in table11
+#@out table12
+#@end core/mass-edit1
+#@begin core/mass-edit2#@desc Mass edit cells in column name
+#@param col-name:name
+#@in table12
+#@out table13
+#@end core/mass-edit2
+#@begin core/mass-edit3#@desc Mass edit cells in column name
+#@param col-name:name
+#@in table13
+#@out table14
+#@end core/mass-edit3
+#@begin core/mass-edit4#@desc Mass edit cells in column name
+#@param col-name:name
+#@in table14
+#@out table15
+#@end core/mass-edit4
+#@begin core/mass-edit5#@desc Mass edit cells in column name
+#@param col-name:name
+#@in table15
+#@out table16
+#@end core/mass-edit5
+#@begin core/mass-edit6#@desc Mass edit cells in column name
+#@param col-name:name
+#@in table16
+#@out table17
+#@end core/mass-edit6
+#@begin core/mass-edit7#@desc Mass edit cells in column name
+#@param col-name:name
+#@in table17
+#@out table18
+#@end core/mass-edit7
+#@begin core/mass-edit8#@desc Mass edit cells in column name
+#@param col-name:name
+#@in table18
+#@out table19
+#@end core/mass-edit8
+#@begin core/mass-edit9#@desc Mass edit cells in column name
+#@param col-name:name
+#@in table19
+#@out table20
+#@end core/mass-edit9
+#@begin core/mass-edit10#@desc Mass edit cells in column name
+#@param col-name:name
+#@in table20
+#@out table21
+#@end core/mass-edit10
+#@begin core/mass-edit11#@desc Mass edit cells in column name
+#@param col-name:name
+#@in table21
+#@out table22
+#@end core/mass-edit11
+#@begin core/mass-edit12#@desc Mass edit cells in column name
+#@param col-name:name
+#@in table22
+#@out table23
+#@end core/mass-edit12
+#@begin core/mass-edit13#@desc Mass edit cells in column name
+#@param col-name:name
+#@in table23
+#@out table24
+#@end core/mass-edit13
+#@begin core/text-transform10#@desc Text transform on cells in column name using expression value.toTitlecase()
+#@param col-name:name
+#@param expression:value.toTitlecase()
+#@in table24
+#@out dish_cleaned_openrefine @uri file:dish_cleaned_openrefine.csv
+#@end core/text-transform10
+#@end NYPL_Data_Cleaning.data_cleaning_via_openrefine.dish
