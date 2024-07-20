@@ -23,6 +23,10 @@
 #@out obvious_data_quality_issues_menu_page
 #@out obvious_data_quality_issues_menu_item
 #@out obvious_data_quality_issues_dish
+#@out menu_db_schema @uri file:sql/create_menu_table.sql
+#@out menu_page_db_schema @uri file:sql/create_menu_page_table.sql
+#@out menu_item_db_schema @uri file:sql/create_menu_item_table.sql
+#@out dish_db_schema @uri file:sql/create_dish_table.sql
 #@end data_profiling_via_excel
 
 ## data cleaning
@@ -37,16 +41,26 @@
 #@out dish_cleaned_openrefine @uri file:dish_cleaned_openrefine.csv
 #@end data_cleaning_via_openrefine
 
-## IC violations check
-#@begin ic_violations_check_via_sqlite
+## data loading
+#@begin data_loading_via_sqlite
+#@in menu_db_schema @uri file:sql/create_menu_table.sql
+#@in menu_page_db_schema @uri file:sql/create_menu_page_table.sql
+#@in menu_item_db_schema @uri file:sql/create_menu_item_table.sql
+#@in dish_db_schema @uri file:sql/create_dish_table.sql
 #@in menu_cleaned_openrefine @uri file:menu_cleaned_openrefine.csv
 #@in menu_page_cleaned_openrefine @uri file:menu_page_cleaned_openrefine.csv
 #@in menu_item_cleaned_openrefine @uri file:menu_item_cleaned_openrefine.csv
 #@in dish_cleaned_openrefine @uri file:dish_cleaned_openrefine.csv
-#@out menu_cleaned
-#@out menu_page_cleaned
-#@out menu_item_cleaned
-#@out dish_cleaned
+#@out nypl_db @uri file:sql/nypl.db
+#@end data_loading_via_sqlite
+
+## IC violations check
+#@begin ic_violations_check_via_sqlite
+#@in nypl_db @uri file:sql/nypl.db
+#@out menu_cleaned @uri file:sql/nypl.db
+#@out menu_page_cleaned @uri file:sql/nypl.db
+#@out menu_item_cleaned @uri file:sql/nypl.db
+#@out dish_cleaned @uri file:sql/nypl.db
 #@end ic_violations_check_via_sqlite
 
 #@end NYPL_Data_Cleaning
