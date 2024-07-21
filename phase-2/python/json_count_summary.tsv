@@ -1,0 +1,5 @@
+Dataset	Total Operations	Most Common Operation	Values Consolidated	Net Unique Reduction	Nulls Created	Nulls Eliminated	Columns Changed
+Menu	68	core/text-transform	0	1850	9925	0	17
+Dish	25	core/mass-edit	0	86260	0	0	1
+MenuItem	6	core/text-transform	0	0	0	0	0
+MenuPage	4	core/text-transform	0	1	0	0	1

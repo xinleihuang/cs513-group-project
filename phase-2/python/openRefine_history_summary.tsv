@@ -1,0 +1,5 @@
+ Dataset  Total Operations Most Common Operation  Columns Changed  Total Unique Value Changes  Total Null Value Changes
+    Menu                68   core/text-transform               17                        1854                      9925
+    Dish                25        core/mass-edit                1                       86260                         0
+MenuItem                 6   core/text-transform                0                           0                         0
+MenuPage                 4   core/text-transform                1                           1                         0
